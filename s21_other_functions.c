@@ -24,3 +24,20 @@ int s21_iscorrect_matrix(matrix_t *A){
         exit = INCORRECT_MATRIX;
     return exit;
 }
+
+int s21_create_minimatr(matrix_t *A, matrix_t *result, int iter){
+    int exit = s21_create_matrix(A->rows -1 , A->columns-1, result);
+    if (!exit){
+        for (int m = 1; m < A->rows; m++){
+            int j = 0;
+            for (int n = 0; n < A->columns; n++){
+                if (n!=iter){
+                    result->matrix[m-1][j] = A->matrix[m][n];
+                    j++;
+                }
+            }
+        }
+    }
+    return exit;
+
+}
