@@ -1,15 +1,14 @@
-GCC=gcc -g
+GCC=gcc 
 CFALGS=-Wall -Werror -Wextra -std=c11
 SOURCES=*.c
 
 all: clean s21_decimal.a
 
-personal: *.c
-	gcc *.c -o a
-	./a
+personal: clean
+	$(GCC) $(CFLAGS) $(SOURCES) -o a
 
 s21_decimal.a:
-	$(GCC)  $(SOURCES) -c
+	$(GCC) $(CFLAGS) $(SOURCES) -c
 	ar rcs s21_decimal.a $(OBJECTS)
 
 
