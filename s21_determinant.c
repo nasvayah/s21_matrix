@@ -13,7 +13,7 @@ int s21_determinant(matrix_t *A, double *result){
         for (int i = 0; i < A->columns; i++){
             double tmp_res = 0;
             matrix_t tmp_matr;
-            exit = s21_create_minimatr(A, &tmp_matr, i);
+            exit = s21_minor(A, &tmp_matr, 0, i);
             if (!exit){
                 int tmp_exit = s21_determinant(&tmp_matr, &tmp_res);
                 if (tmp_exit)

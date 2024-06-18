@@ -25,17 +25,22 @@ int s21_iscorrect_matrix(matrix_t *A){
     return exit;
 }
 
-int s21_create_minimatr(matrix_t *A, matrix_t *result, int iter){
+int s21_minor(matrix_t *A, matrix_t *result, int iter, int jter){
     int exit = s21_create_matrix(A->rows -1 , A->columns-1, result);
-    if (!exit){
-        for (int m = 1; m < A->rows; m++){
+    if (exit){
+        return exit;
+    }
+    int i = 0;
+    for (int m = 0; m < A->rows; m++){
+        if (m != iter){
             int j = 0;
             for (int n = 0; n < A->columns; n++){
-                if (n!=iter){
-                    result->matrix[m-1][j] = A->matrix[m][n];
+                if (n!=jter){
+                    result->matrix[i][j] = A->matrix[m][n];
                     j++;
                 }
             }
+            i++;
         }
     }
     return exit;

@@ -13,11 +13,9 @@ int main(){
     A.matrix[0][0] = 1;
     s21_print_matrix(&A);
     //s21_print_matrix(&B);
-    double x = 0;
 
-    printf("%d\n", s21_determinant(&A, &x));
-    printf("%lf", x);
-    // s21_print_matrix(&C);
+    printf("%d\n", s21_calc_complements(&A, &C));
+    s21_print_matrix(&C);
     s21_remove_matrix(&C);
     return 0;
 }
