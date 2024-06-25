@@ -33,7 +33,10 @@ clean:
 	rm -rf s21_matrix *.a $(OBJECTS) TESTS/*.log a.out *.gcno *.gcda report report.info *.dSYM
 
 valgrind: clean test
-	valgrind --tool=memcheck --leak-check=yes  ./s21_matrix
+	valgrind --tool=memcheck --leak-check=yes --log-file=valgrind.log ./s21_matrix 2>> valgrind.log
+	grep -E '==[0-9]+== ERROR SUMMARY:.*[1-9].*errors.*\n.*' valgrind.log > errors.log
+
+
 
 clang:
 	clang-format -i -style=google $(SOURCES) *.h TESTS/*.c TESTS/*.h

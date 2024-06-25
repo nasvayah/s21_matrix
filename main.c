@@ -1,6 +1,5 @@
 // #include "s21_matrix.h"
 
-
 // int main(){
 //     matrix_t A = {0, 0, 0};
 //     matrix_t B = {0, 0, 0};
