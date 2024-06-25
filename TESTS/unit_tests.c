@@ -966,28 +966,17 @@ void s21_suit_execution(Suite *suite, int *failed_count, char *suite_name) {
 int main(void) {
   int failed_count = 0;
 
-  s21_suit_execution(s21_create_matrix_suite(), &failed_count,
-                     "tests/create_matrix.log");
-  s21_suit_execution(s21_remove_matrix_suite(), &failed_count,
-                     "tests/remove_matrix.log");
-  s21_suit_execution(s21_eq_matrix_suite(), &failed_count,
-                     "tests/eq_matrix.log");
-  s21_suit_execution(s21_sum_matrix_suite(), &failed_count,
-                     "tests/sum_matrix.log");
-  s21_suit_execution(s21_sub_matrix_suite(), &failed_count,
-                     "tests/sub_matrix.log");
-  s21_suit_execution(s21_mult_number_suite(), &failed_count,
-                     "tests/mult_number.log");
-  s21_suit_execution(s21_mult_matrix_suite(), &failed_count,
-                     "tests/mult_matrix.log");
-  s21_suit_execution(s21_transpose_suite(), &failed_count,
-                     "tests/transpose.log");
-  s21_suit_execution(s21_calc_complements_suite(), &failed_count,
-                     "tests/calc_complements.log");
-  s21_suit_execution(s21_determinant_suite(), &failed_count,
-                     "tests/determinant.log");
-  s21_suit_execution(s21_inverse_matrix_suite(), &failed_count,
-                     "tests/inverse_matrix.log");
+  s21_suit_execution(s21_create_matrix_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_remove_matrix_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_eq_matrix_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_sum_matrix_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_sub_matrix_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_mult_number_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_mult_matrix_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_transpose_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_calc_complements_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_determinant_suite(), &failed_count, NULL);
+  s21_suit_execution(s21_inverse_matrix_suite(), &failed_count, NULL);
 
   return failed_count == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
 }

@@ -6,7 +6,7 @@ TESTS_SOURCES=TESTS/unit_tests.c
 OBJECTS=$(SOURCES:.c=.o)
 
 ifeq ($(shell uname), Linux)
-	CHECKFLAGS=-lcheck -lm -lpthread -lrt -lsubunit
+	CHECKFLAGS= -lcheck -lsubunit -lm -lrt -lpthread -D_GNU_SOURCE
 #-lsubunit
 else
 	CHECKFLAGS=-lcheck -lm -lpthread
